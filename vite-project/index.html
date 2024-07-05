@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbots</title>
+  <!-- <link rel="stylesheet" href="/style.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <section class="gradient-custom">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-6 col-lg-5 col-xl-5 mb-4 mb-md-0">
+            <div class="position-fixed col-md-4 col-lg-4 col-xl-3 mb-4">
+              <h5 class="font-weight-bold mb-3 text-center">Chatbots</h5>
+              <div class="card mask-custom">
+                <div class="card-body">
+                  <ul class="list-unstyled" id="botList">
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-7 col-xl-7">
+            <div class="messages-container " id="messagesContainer">
+              <ul class="list-unstyled" id="messageList">
+              </ul>
+              <div id="loadingDots" class="d-flex justify-content-end"></div>
+              <div class="fixed-bottom">
+                <form id="messageForm" class="message-form">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-8 col-lg-9 col-xl-9">
+                        <input type="text" id="messageInput" class="form-control" placeholder="Entrez votre message">
+                      </div>
+                      <div class="col-md-3 col-lg-2 col-xl-2">
+                        <button type="submit" class="btn btn-success w-100">Envoyer</button>
+                      </div>
+                      <div class="col-md-2 col-lg-1 col-xl-1">
+                        <a href="#!" id="resetConversation" class="btn btn-danger w-100">reset</a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="text-end mt-3">
+              </div>
+            </div>
+          </div>
+    </section>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
