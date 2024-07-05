@@ -1,4 +1,12 @@
-import { addMessage } from "../main";
+const resetBtn = document.getElementById('resetConversation');
+if (resetBtn)
+{
+    resetBtn.addEventListener('click', () => 
+    {
+        clearLocalStorage();
+    })
+}
+
 
 export function addMessageToLocalStorage(message)
 {

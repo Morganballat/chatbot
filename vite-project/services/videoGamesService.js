@@ -35,13 +35,25 @@ export async function getAliases(bot, game)
         let aliasesStringify = "";
         if (data.alternative_names.length > 0)
         {
-            data.alternative_names.map((alias) =>
+            if (data.alternative_names.length > 1)
             {
-                aliasesStringify += alias + ' ';
-            })
-        }
+                aliasesStringify += "sont ";
+                data.alternative_names.map((alias) =>
+                {
+                    aliasesStringify += alias + ' ';
+                })
+            } else
+            {
+                data.alternative_names.map((alias) =>
+                {
+                    aliasesStringify += "est " + alias + ' ';
+                })
+            }
+        } else (
+            aliasesStringify = "n'existent pas"
+        )
 
-        const message = new Message(bot.name, bot.avatar, `Les aliases de ${data.name} sont ${aliasesStringify}.`, currentDateTime());
+        const message = new Message(bot.name, bot.avatar, `Les aliases de ${data.name}  ${aliasesStringify}.`, currentDateTime());
         startLoadingAnimation(message);
 
     } catch (error)

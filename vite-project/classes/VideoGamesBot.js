@@ -45,7 +45,7 @@ export default class VideoGamesBot
                 this.setMessageToUIAndSetStates(false, false, true, "De quel jeu souhaitez vous avoir les noms alternatifs ?", currentDateTime())
             } else if (messageInput.content.toLowerCase().includes('botentouche'))
             {
-                this.setMessageToUIAndSetStates(false, false, true, "Commandes jeu vidéo: 'rating', 'release', 'alias'", currentDateTime())
+                this.setMessageToUIAndSetStates(false, false, true, "Commandes jeu vidéo (format nom: pokemon-red, grand-theft-auto-v): 'rating', 'release', 'alias'", currentDateTime())
             }
         }
     }

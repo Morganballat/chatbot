@@ -5,10 +5,11 @@ import { currentDateTime } from './public/js/date';
 import HelpBot from './classes/HelpBot';
 import VideoGamesBot from './classes/VideoGamesBot';
 import PokemonBot from './classes/PokemonBot';
+import { scrollToBottom } from './public/js/ui';
 
-const weatherBot = new WeatherBot("MétéoBot", "images/meteo.jpg");
+const weatherBot = new WeatherBot("MeteoBot", "images/meteo.jpg");
 const helpBot = new HelpBot("AssistantBot", "images/helper.jpg");
-const videoGamesBot = new VideoGamesBot("Jeux vidéoBot", "images/videoGames.jpg");
+const videoGamesBot = new VideoGamesBot("JeuxVideoBot", "images/videoGames.jpg");
 const pokemonBot = new PokemonBot("PokemonBot", "images/pokeball.png")
 
 const bots = [helpBot, weatherBot, videoGamesBot, pokemonBot];
@@ -19,7 +20,7 @@ const messageForm = document.getElementById('messageForm');
 const messageInput = document.getElementById('messageInput');
 const messageList = document.getElementById('messageList');
 const botList = document.getElementById('botList');
-const resetBtn = document.getElementById('resetConversation');
+
 
 document.addEventListener('DOMContentLoaded', () =>
 {
@@ -30,13 +31,10 @@ document.addEventListener('DOMContentLoaded', () =>
         {
             addMessage(message);
         })
+        scrollToBottom();
     }
 })
 
-resetBtn.addEventListener('click', () => 
-{
-    clearLocalStorage();
-})
 
 if (bots)
 {
@@ -157,5 +155,5 @@ export function addMessage(message)
     }
 
     messageList.innerHTML += messageHTML;
-    messageList.gradientCustom = messageList.scrollHeight;
+    scrollToBottom();
 }
